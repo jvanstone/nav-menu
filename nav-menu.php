@@ -8,14 +8,16 @@
  *
  */
 
- //Load Style Sheet for the Nav Menu
-function nav_menu_plugin_css() {
+
+//Load necessary stylesheets and icons for navigation.
+function nav_menu_plugin_scripts() {
   $plugin_url = plugin_dir_url( __FILE__ );
   wp_enqueue_style( 'nav-menu', $plugin_url . 'css/nav-menu.css' );
+  wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css');
 }
-add_action( 'wp_enqueue_scripts', 'nav_menu_plugin_css' );
+add_action( 'wp_enqueue_scripts', 'nav_menu_plugin_scripts' );
 
-//create custom menulocation
+//create custom menu location
 function nav_menu_plugin_location() {
   register_nav_menus(
     array(
@@ -47,6 +49,8 @@ function vo_nav_menu(){
    [ v ]
   </a>
 </div> 
+
+
   
   <script>
     /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
